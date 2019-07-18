@@ -217,6 +217,7 @@ class BaseAPI(object):
         if low_priority:
             fcm_payload['priority'] = self.FCM_LOW_PRIORITY
         else:
+            fcm_payload['android'] = dict(priority=self.FCM_HIGH_PRIORITY) 
             fcm_payload['priority'] = self.FCM_HIGH_PRIORITY
 
         if delay_while_idle:
